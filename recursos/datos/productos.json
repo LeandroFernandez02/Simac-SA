@@ -1,0 +1,37 @@
+{
+    "nombre_tienda":"Simac SA",
+    "productos":[
+        {
+            "id": 1,
+            "nombre": "Unidad de Control Dimensional",
+            "imagen": "./recursos/imagenes/catalogo/Control Dimensional PC.png",
+            "descripcion": "El Control Dimensional es un paso muy importante para garantizar la conformidad de sus piezas tras suproducción.",
+            "categoria": "Instrumentos de Control",
+            "cantidad": 0
+        },
+        {
+            "id": 2,
+            "nombre": "Control de Estanqueidad",
+            "imagen": "./recursos/imagenes/catalogo/Control de Estanqueidad PC.png",
+            "descripcion": "La máquina de control de estanqueidad estándar, está orientada a encontrar un equilibrio entre precio, personalización y reutilización.",
+            "categoria": "Instrumentos de Control",
+            "cantidad": 0
+        },
+        {
+            "id": 3,
+            "nombre": "Banco de Pruebas para Embragues",
+            "imagen": "./recursos/imagenes/catalogo/Banco de Pruebas PC.png",
+            "descripcion": "Sistema de dos caras para la construcción de secciones de montaje y prueba flexibles.",
+            "categoria": "Bancos de Pruebas",
+            "cantidad": 0
+        }, 
+        {
+            "id": 4,
+            "nombre": "Panel de Visualización de Estadísticas",
+            "imagen": "./recursos/imagenes/catalogo/Panel.png",
+            "descripcion": "El panel de visualizacíon o pantalla muestra el estado de la maquina, los mensajes de error y los menus de funciones.",
+            "categoria": "Paneles",
+            "cantidad": 0
+        }
+    ]
+}

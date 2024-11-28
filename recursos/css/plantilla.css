@@ -1,0 +1,419 @@
+/**************************************/
+/* VENTANA DIALOGO ********************/
+/**************************************/
+dialog form{
+    width:100%;
+    display:flex;
+    justify-content: end; 
+    align-items: center;
+}
+dialog form > button{
+    background-color: transparent;
+    border:none;
+    color: #ffffff;
+}
+dialog.popup-carro{
+    color: #ffffff;
+    background-color: #042C4F;
+    position:fixed;
+    margin:0;
+    padding: 20px;
+    inset: unset;
+    right:0;
+    bottom:0;
+    top: 70px;
+    width: 25%;
+    min-width: 400px;
+    min-height:100dvh;
+    border:none;
+}
+.popup-carro section article {
+    margin-top: 10px;
+    display: flex;  
+    justify-content: space-between;
+    align-items: center;
+}
+
+.popup-carro section li{
+    margin: 10px;
+    list-style: none;
+}
+.popup-carro section .li-nombre{
+    font-size: 18px;
+}
+.popup-carro section .li-categoria{
+    color:#96C9DE;
+    font-size: 15px;
+}
+.popup-carro section  button{
+    margin: 10px;
+    background-color: #042C4F;
+}
+.caja-contador-eliminar span{
+    position: relative;
+    bottom: 3px;
+    margin: 4px;
+}
+
+/* ************************************************************** */
+/* cabecera ***************************************************** */
+/* ************************************************************** */
+.cabecera {
+    background-color: #042C4F;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px 20px 20px;
+    height: 70px;
+    border-bottom: 4px solid white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1500;
+}
+
+.cabecera .logo-simac{
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+.cabecera-nav {
+    display: flex;
+    position: relative;
+    right: 50px;
+}
+
+.cabecera-nav-a {
+    color: #ffffff;
+    padding: 0px 20px;
+    font-size: 19px;
+    text-decoration: none;
+    font-weight: 600;
+    text-shadow: 0px 0px 2px black;
+}
+.cabecera div a{
+    color: #042C4F;
+}
+.cabecera div img{
+    margin:0px 4px 0px 4px ;
+}
+.carro-compras{
+    display: inline;
+}
+.carro-compras button{
+    background-color: #042C4F;
+}
+.carro-compras span{
+    color: #ffffff;
+    position: relative;
+    bottom: 5px;
+}
+
+
+/* Ocultar el menú en móviles */
+.menu {
+    display: none;
+}
+
+/* Estilos para el ícono de menú hamburguesa */
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-icon div {
+    width: 30px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 5px 0;
+}
+
+/* PIE */
+.pie {
+    background-color: #042C4F;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: start;    
+    padding: 50px 130px 30px 130px;
+}
+
+.pie-section, .pie-sectionB {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;  
+    margin-right: 10px;
+    margin-left: 10px;
+    height: 100%;
+}
+
+.pie-h3 {
+    color: #ffffff;
+    font-size: 19px;
+    font-weight: 600;
+    padding-bottom: 8px;
+    text-shadow: 0px 0px 2px black;
+}
+
+.pie-h3-sitios {
+    color: #ffffff;
+    font-size: 19px;
+    font-weight: 600;
+    padding-bottom: 8px;
+    text-shadow: 0px 0px 2px black;
+}
+
+.pie-section ul,
+.pie-section p,
+.pie-section a,
+.pie-section li,
+.pie-sectionA p,
+.pie-sectionB a {
+    color: rgba(255, 255, 255, 74%);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 250;
+    padding: 0;
+    text-shadow: 0px 0px 1.5px black;
+}
+
+.pie-section p {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.pie-section li {
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+    min-width: 170px;
+}
+
+.pie-section li img {
+    margin-right: 7px;
+}
+
+.pie-sectionA {
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    margin-right: 10px;
+    margin-left: 10px;
+    height: 100%;
+}
+
+.pie-sectionA p {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0px;
+}
+
+/* tablet */
+@media (max-width: 1285px) {
+
+    /*header tablet*/
+    .cabecera {
+        justify-content: space-between;
+        padding: 20px;
+        z-index: 2000;
+    }
+
+    .cabecera-nav {
+        display: none;
+    }
+    .cabecera div a{
+        color: #ffffff;
+    }
+
+    .cabecera .logo-simac img {
+        height: 20px;
+        width: 150px;
+    }
+
+    .cabecera .img-descargar img {
+        display: none;
+    }
+    .cabecera .carro-compras{
+        display: flex;
+    }
+    .cabecera .carro-compras .carro-compras__boton, 
+    .cabecera .carro-compras .menu-icon{
+        margin: 0px 0px 0px 20px;
+    }
+
+    .menu-icon {
+        display: flex;
+    }
+
+    /* Estilos del menú desplegable */
+    .menu {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 220px;
+        border-radius: 0 0 0 15px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+        display: none;
+        flex-direction: column;
+        z-index: 1003;
+        padding: 10px 15px 10px 15px;
+        background-color:#042C4F;
+    }
+
+    .menu a {
+        color: #ffffff;
+        padding: 10px 0;
+        font-size: 18px;
+        text-decoration: none;
+        border-bottom: 1px solid white;
+        display: flex;
+        align-items: center;
+    }
+
+    .menu a img {
+        margin-right: 5px;
+    }
+
+    .menu a:last-child {
+        border-bottom: none;
+    }
+
+    /* Estilo específico para "Text-chico" */
+    .menu a.Text-chico {
+        font-size: 12px;
+        font-weight: 200;
+        border-bottom: none;
+        /* Sin línea divisoria */
+        display: flex;
+        align-items: center;
+        padding: 10px 0 0px 0;
+    }
+
+    .menu a.Text-chico img {
+        margin-right: 5px;
+        height: 13px;
+        width: 13px; 
+    }
+
+    .menu div{
+        margin-top: 50px;
+    }
+
+    /* Mostrar el menú cuando esté activo */
+    .menu.show {
+        z-index: 1003;
+        display: flex;
+        height: 300px;
+        padding: 10px 15px 10px 15px;
+        box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.2);      
+    }
+
+    /* Ajustes para los íconos en el menú */
+    .menu img {
+        height: 18px;
+        width: 18px;
+    }
+
+    /*Footer tablet*/
+    .pie {
+        background-color: #042C4F;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: left;
+        padding: 40px 0 40px 0; 
+    }
+
+    .pie-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-right: 10px;
+        margin-left: 10px;
+        height: 100%;
+    }
+
+    .pie-sectionA img{
+        margin: auto;
+        height: 35px;
+        width: 240px;
+    }
+
+    .pie-sectionB {
+        display: none;
+    }
+}
+
+
+
+/* necesario para acomodar el pie a una resolucion mas chica */
+@media (max-width: 760px) {
+    .pie {
+        background-color: #042C4F;
+        padding: 30px 5px 30px 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .pie-section {
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        margin-bottom: 15px;
+        text-align: left;
+    }
+
+    .pie-sectionA {
+        order: 1;
+        margin-top: 10px;
+    }
+
+    .pie-sectionA p {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 0px;
+    }
+
+    .pie-sectionA img {
+        height: 30px;
+        width: 250px;
+        margin-bottom: 10px;
+        margin: 0px -15px 10px -15px;
+    }
+
+    .pie-section li {
+        text-align: left;
+    }
+
+    .pie-h3 {
+        font-size: 16px;
+    }
+
+    .pie-section ul,
+    .pie-section p,
+    .pie-section a,
+    .pie-section li {
+        font-size: 15px;
+    }
+}
+
+/* mobile */
+@media (max-width: 600px) {
+   
+    /* footer */
+    .pie-section ul,
+    .pie-section p,
+    .pie-section a,
+    .pie-section li {
+        font-size: 14px;
+    }  
+}
+
+.logo-simac{
+    height: 30px;
+}

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simac SA</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="recursos/css/contenido.css">
+    <link rel="stylesheet" href="recursos/css/plantilla.css">
+    <!-- JAVACRIPT -->
+    <script src="./recursos/javascript/boton.js"></script>
+    <script type="module" src="./recursos/javascript/principal.js"></script>
+    <!-- fuente -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    
+    <!-- popup -->
+    <dialog class="popup-carro" id="popup-carro">
+        <form method="dialog">
+            <button><img src="recursos/imagenes/catalogo/x.png" alt="" height="21" width="21"></button>
+        </form>
+        <h2>Productos</h2>
+        <section id="contenedor-carro">
+            <!-- <article>
+                <ul>
+                    <li class="li-nombre">Nombre</li>
+                    <li class="li-categoria">Categoria</li>                    
+                </ul>
+                <button><img src="recursos/imagenes/catalogo/eliminar.png" alt="Eliminar" height="21" width="21"></button>              
+            </article> -->
+        </section>
+    </dialog>
+    <!-- fin popup -->
+
+    <header class="cabecera">
+        <a href="index.html" class="logo-simac">
+            <img src="recursos/imagenes/general/Render SIMAC.png" alt="Simac SA" height="25" width="190">
+        </a>
+        <nav class="cabecera-nav">
+            <a href="index.html" class="cabecera-nav-a">Inicio</a>
+            <a href="catalogo.html" class="cabecera-nav-a">Catalogo</a>
+            <a href="contacto.html" class="cabecera-nav-a">Contacto</a>
+        </nav>
+        <div>
+            <!-- descargar catalogo -->
+            <a href="recursos/documentos/FOLDER_SIMAC (1).pdf" download="CATALOGO_SIMAC.pdf" class="img-descargar">
+                <img src="recursos/imagenes/general/flecha-hacia-abajo.png" alt="Simac SA" height="26" width="26">
+            </a>
+            <!-- carrito de compras -->
+            <div class="carro-compras">
+                <button class="carro-compras__boton" id="abrir-popup-carro" aria-label="Abrir diálogo">
+                    <img src="recursos/imagenes/catalogo/carrito-de-compras.png" alt="Simac SA" height="26" width="26">
+                    <span id="carro-cantidad-items" class="carro-compras__items">0</span>
+                </button>
+
+                <div class="menu-icon" onclick="toggleMenu()">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="menu">
+                    <a href="index.html">Inicio</a>
+                    <a href="catalogo.html">Catálogo</a>
+                    <a href="contacto.html">Contacto</a>
+                    <div>
+                        <a class="Text-chico" href="recursos/documentos/FOLDER_SIMAC (1).pdf">
+                            <img src="recursos/imagenes/general/descargar.png" alt="">
+                            Ver Mas...</a>
+                        <a class="Text-chico" href="mailto:ingenieria@simacarg.com.ar">
+                            <img src="recursos/imagenes/general/email.png" alt="Mail" height="18" width="18">
+                            ingenieria@simacarg.com.ar
+                        </a>
+                        <a class="Text-chico" href="tel:+543514883449">
+                            <img src="recursos/imagenes/general/telefono.png" alt="Teléfono" height="18" width="18">
+                            +54 351 4883449
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- menu desplegable movil -->
+        
+    </header>
+
+    <main>
+        <img class="fondo-principal" src="recursos/imagenes/catalogo/Fondo-Catalogo.png" alt="">
+        <div class="contenedor-principal2">
+            <h1>Nuestros Productos</h1>
+        </div>
+
+        <br>
+        <div class="productos">
+            <div class="contenedor-subtitulo">
+                <h2>Contamos con una amplia gama de servicios</h2>
+                <p>Nuestro campo de acción alcanza la gestión de proyectos de ampliación, actualización e integración de
+                    tecnologías</p>
+            </div>
+
+            <!-- filtro  -->
+            <div class="barra-filtro">
+                <form action="" method="GET">
+
+                    <select name="categoria" class="select-categoria" id="select-categoria">
+                        <option value="">Todas las Categorías</option>
+                        <option value="Instrumentos de Control">Control</option>
+                        <option value="Bancos de Pruebas">Banco</option>
+                        <option value="Paneles">Panel</option>
+                    </select>
+
+                </form>
+                <button type="" class="btn-buscar" id="btn-buscar">Buscar</button>
+            </div>
+
+            <!-- productos -->
+            <div class="contenedor-productos" id="contenedorProductos">
+                <!-- 
+                <article class="contenido-productos">
+                    <img src="recursos/imagenes/catalogo/Control Dimensional PC.png" alt="" height="377" width="377 ">
+                    <section>
+                        <h2>Unidad de control dimensional</h2>
+                        <p>El Control Dimensional es un paso muy importante para garantizar la conformidad de sus piezas
+                            tras su
+                            producción.</p>
+                        <a href="contacto.html">
+                            <button>Contactanos</button>
+                        </a>
+                    </section>
+                </article>
+                -->
+            </div>
+        </div>
+    </main>
+
+    <footer class="pie">
+        <section class="pie-sectionA">
+            <img src="recursos/imagenes/general/Render SIMAC2.png" alt="Simac SA" height="40" width="300">
+            <p>©2024 | Simac SA</p>
+            <p>Todos los derechos reservados</p>
+        </section>
+        <section class="pie-sectionB">
+            <h3 class="pie-h3-sitios">Sitio</h3>
+            <ul class="lista-sitios">
+                <li type="none"><a href="index.html" class="footer-a">Inicio</a></li>
+                <li type="none"><a href="contacto.html" class="footer-a">Contacto</a></li>
+                <li type="none"><a href="catalogo.html" class="footer-a">Catalogo</a></li>
+
+            </ul>
+        </section>
+        <section class="pie-section">
+            <h3 class="pie-h3">Contacto</h3>
+            <ul>
+                <li type="none"><img src="recursos/imagenes/general/telefono.png" alt="" height="18" width="18">+54 351
+                    4883449
+                </li>
+                <li type="none"><img src="recursos/imagenes/general/telefono.png" alt="" height="18" width="18">+54 351
+                    4870370
+                </li>
+                <li type="none"><img src="recursos/imagenes/general/email.png" alt="" height="18" width="18">
+                    ingenieria@simacarg.com.ar</li>
+                <li type="none"><img src="recursos/imagenes/general/email.png" alt="" height="18" width="18">
+                    administracion@simacarg.com.ar</li>
+            </ul>
+        </section>
+        <section class="pie-section">
+            <h3 class="pie-h3">Ubicacion</h3>
+            <ul>
+                <li type="none"><img src="recursos/imagenes/general/ubicacion.png" alt="" height="18" width="18">
+                    12 de Octubre 2280 - Bª Alberdi <br> Cordoba - Argentina</li>
+            </ul>
+        </section>
+    </footer>
+</body>
+
+</html>

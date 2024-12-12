@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="recursos/css/contenido.css">
     <link rel="stylesheet" href="recursos/css/plantilla.css">
     <!-- JAVACRIPT -->
-    <script src="/recursos/javascript/boton.js"></script>
+    <script type="module" src="./recursos/javascript/funciones.js"></script>
     <!-- fuente -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,7 +33,7 @@
         </a>
 
         <!-- menu desplegable movil -->
-        <div class="menu-icon" onclick="toggleMenu()">
+        <div class="menu-icon" >
             <div></div>
             <div></div>
             <div></div>
@@ -86,7 +86,6 @@
                 <br>
                 <textarea name="mensaje" id="id-mensaje"></textarea>
                 <br>
-                <!-- <input type="submit" value="Enviar"> disabled(funciona para desabilitar) -->
                 <button type="submit">
                     Enviar
                 </button>

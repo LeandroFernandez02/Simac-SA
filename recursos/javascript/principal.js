@@ -1,119 +1,42 @@
-//Importamos la funcion renderizar
-import { renderizarProductos, renderizarProductosCarro,asignarEventoBotones } from "./funciones.js";
+// IMPORTAR FUNCIONES ********************************************************
+import { renderizarProductos, renderizarProductosCarro,cargarCarroEnMemoria,abrirCerrarPopUp,barraFiltro } from "./funciones.js"; // Importamos funciones desde "funciones.js"
 
-//Referenciamos contenedor
-const contProductos = document.getElementById('contenedorProductos')
 
+// RENDERIZAR PRODUCTOS *****************************************************
 //Invocamos Funcion renderizar
-renderizarProductos(contProductos)
+const contProductos = document.getElementById('contenedorProductos') //Referenciamos el contenedor
+renderizarProductos(contProductos) // Llamamos la funcion
 
-// Referenciamos el elemento boton abrir popup
-const botonAbrirPopup = document.getElementById('abrir-popup-carro')
 
-botonAbrirPopup.addEventListener("click", () => {
-    const popupCarro = document.getElementById('popup-carro')
-    if(popupCarro.open){
-        popupCarro.close()
-    }else{
-        popupCarro.showModal()
-    }
-})
+// POP-UP *******************************************************************
+// Abrir o cerrar el pop-up del carrito
+const botonAbrirPopup = document.getElementById('abrir-popup-carro') // Referenciamos el elemento boton abrir popup
+abrirCerrarPopUp(botonAbrirPopup); // LLamamos la funcion
 
+
+// AÑADIR A CARRITO **********************************************************
 // Poner a escuchar los botones de los productos "Agregar carrito"
-const productosEnCarro = []
-const botonesProductos = document.querySelectorAll('[data-btn-carro]')
+const productosEnCarro = [] // Array de productos
+const botonesProductos = document.querySelectorAll('[data-btn-carro]') // Referenciamos el boton del renderizado
 
 botonesProductos.forEach(boton => {
-    // console.log(boton)
-    boton.addEventListener('click',()=>{
-        const idProducto = parseInt(boton.dataset.id)
-        // const produtoElegido = {
-        //     id: idProducto,
-        //     cantidad: 1
-        // }
-        // console.log(idProducto)
-        // Arreglo
-        // productosEnCarro.push(produtoElegido)
-        productosEnCarro.push(idProducto)
-        // console.log(productosEnCarro)
+    boton.addEventListener('click',()=>{ // Agregamos evento de click para el boton
+        const idProducto = parseInt(boton.dataset.id) // Obtenemos el id de cada producto seleccionado
 
-        // Renderizar el carro
-        const contenedorCarro = document.getElementById("contenedor-carro")
-        renderizarProductosCarro(productos, productosEnCarro, contenedorCarro)
+        productosEnCarro.push(idProducto) // Agregamos al array de productos el producto seleccionado por su id
 
-        // Renderizar el contador cantidad
-        // Referenciar el contenedor cantidad items (span)
-        const contadorItems = document.getElementById('carro-cantidad-items')
-        contadorItems.textContent = productosEnCarro.length
+        const contenedorCarro = document.getElementById("contenedor-carro") // Referenciamos el contenedor del carro
+        renderizarProductosCarro(productosEnCarro, contenedorCarro) // Llamamos a la funcion para renderizar los productos en el carro      
+        
+        const contadorItems = document.getElementById('carro-cantidad-items') // Referenciar el contenedor cantidad items (span)
+        contadorItems.textContent = productosEnCarro.length // Renderizar el contador cantidad
     })
 })
 
+// BARRA DE FILTRO ***********************************************************************************
+// Filtra por los distintos productos del catalogo
+barraFiltro(); // Llamamos la funcion
 
-
-
-
-//FILTRO
-const campoFiltro = document.getElementById("select-categoria")//Cambiar
-const botonBuscar = document.getElementById("btn-buscar")
-
-botonBuscar.addEventListener('click', () => {
-    fetch('/recursos/datos/productos.json')
-        // Espero y luego convierto a objeto JS
-        .then((respuesta) => {
-            //console.log(respuesta)
-            return respuesta.json()
-        }).then(objetoDatos => {
-
-            
-            console.log(objetoDatos.productos)
-            
-            console.log(campoFiltro.value)
-            const productosFiltrados = objetoDatos.productos.filter((producto) => {
-                const nombreMinusculas = producto.categoria.toLowerCase()//cambiar
-                const textoMinusculas = campoFiltro.value.toLowerCase()//Cambiar
-
-                return nombreMinusculas.includes(textoMinusculas)
-            })
-
-            let contenidoFiltradoHTML = ''
-            productosFiltrados.forEach((producto) => {
-                contenidoFiltradoHTML +=
-                    `<article class="contenido-productos">
-                    <img src="${producto.imagen}" alt="" height="377" width="377 ">
-                    <section>
-                        <h2>${producto.nombre}</h2>
-                        <p>${producto.descripcion}</p>
-                        <a>
-                            <button class="productos_boton" data-btn-carro data-id="${producto.id}">
-                            Agregar al Presupuesto
-                            </button>
-                        </a>
-                    </section>
-                </article>
-                    `
-            })
-            contProductos.innerHTML = contenidoFiltradoHTML
-            asignarEventoBotones(objetoDatos.productos)
-            
-        })
-})
-
-
-document.addEventListener("DOMContentLoaded", () => {
-    // Obtén el contenedor del carrito
-    const contenedorCarro = document.getElementById("contenedor-carro");
-
-    // Carga el carrito desde el localStorage o inicializa un array vacío si no hay nada
-    const productosEnCarro = JSON.parse(localStorage.getItem('carro')) || [];
-
-    // Llama a renderizarProductosCarro para mostrar los productos en el carrito
-    fetch('/recursos/datos/productos.json')
-        .then((respuesta) => respuesta.json())
-        .then((objetoDatos) => {
-            renderizarProductosCarro(objetoDatos.productos, productosEnCarro, contenedorCarro);
-
-            // Actualiza el contador de cantidad de items en el carrito
-            const contadorItems = document.getElementById('carro-cantidad-items');
-            contadorItems.textContent = productosEnCarro.length;
-        });
-});
+// CARRO EN MEMORIA ********************************************************
+// Carga los productos en carro en la memoria local del usuario
+cargarCarroEnMemoria(); // Llamamos la funcion
